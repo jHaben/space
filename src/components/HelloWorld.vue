@@ -11,6 +11,8 @@
 
       <h1 class="text-h2 font-weight-bold">Vuetify</h1>
 
+
+
       <div class="py-14" />
 
       <v-row class="d-flex align-center justify-center">
@@ -75,5 +77,5 @@
 </template>
 
 <script setup>
-  //
+  // https://api.nasa.gov/planetary/apod?api_key=f9atKSAgFMclxbzHFSknrELiAwS70bhkbtI34aho
 </script>
