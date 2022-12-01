@@ -5,8 +5,8 @@ const API_URL = "https://api.nasa.gov/planetary/apod?api_key=f9atKSAgFMclxbzHFSk
 
 
 class nasaService {
-  getEvents() {
-    return axios.get(API_URL + "event/byId?id=3");
+  getInfo() {
+    return axios.get(API_URL);
   }
 
   // addEvent(data) {
