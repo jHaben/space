@@ -1,8 +1,17 @@
 <template>
   <v-container class="fill-height">
-    <v-responsive class="d-flex align-center text-center fill-height">
-      <v-img contain height="300" src="src/assets/logo.svg" />
+
+
+    <v-responsive class="d-flex align-center fill-height">
+      <h1 class="text-center "> {{ info.title }}</h1>
+      <v-img contain height="400" :src=info.hdurl />
+      <br />
+      <p> {{ info.explanation }}</p>
+      <br />
+      <p> All information provided by NASA, the <a href="https://api.nasa.gov/">APOD API</a> </p>
     </v-responsive>
+
+
   </v-container>
 </template>
 
@@ -13,23 +22,26 @@ import nasaService from '@/services/nasa.service';
 export default {
 
   data: () => ({
-    type: "month",
-    weekday: [0, 1, 2, 3, 4, 5, 6],
-    selectedEvent: {},
-    selectedElement: null,
-    selectedOpen: false,
 
-    typeToLabel: {
-      month: "Month",
-      week: "Week",
+    info: {
+      copyright: "",
+      date: "",
+      explanation: "",
+      hdurl: "",
+      media_type: "",
+      service_version: "",
+      title: "",
+      url: ""
     },
+
+
   }),
   beforeMount() {
     this.getInfo();
   },
   computed: {
     displayInfo() {
-      return this.allEvents;
+      return this.info;
     },
   },
 
@@ -38,7 +50,9 @@ export default {
     getInfo() {
       nasaService.getInfo().then(
         (response) => {
-          this.allEvents = response.data;
+          this.info = response.data;
+
+          console.log(response.data)
         },
         (error) => {
           console.log(
