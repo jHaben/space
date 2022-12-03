@@ -1,5 +1,7 @@
 # space
 
+[![Deploy](https://github.com/jHaben/space/actions/workflows/deploy.yml/badge.svg)](https://github.com/jHaben/space/actions/workflows/deploy.yml)
+
 ## Project setup
 
 ```
